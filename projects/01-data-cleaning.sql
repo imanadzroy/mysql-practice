@@ -152,6 +152,9 @@ UPDATE layoffs_staging2
 SET total_laid_off = NULL
 WHERE total_laid_off = 'NULL' OR total_laid_off = '';
 
+ALTER TABLE layoffs_staging2
+MODIFY COLUMN total_laid_off INT;
+
 SELECT *
 FROM layoffs_staging2
 WHERE percentage_laid_off = 'NULL'
